@@ -5,6 +5,7 @@
     "cors": false,
     "ui": true,
 
+    "storage": "tmp/",
     "silent": false,
     "level": "info",
 
@@ -12,7 +13,7 @@
     "options": {},
     "timeout": 60000,
     "compress": false,
-    "cache": 3600,
+    "cache": 30,
     "cleanup": false,
 
     "commands": {

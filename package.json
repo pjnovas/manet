@@ -1,79 +1,72 @@
 {
-    "name": "manet",
-    "version": "0.3.9",
-    "description": "Website screenshot service powered by Node.js, SlimerJS and PhantomJS",
-    "license": "MIT",
-
-    "repository": "vbauer/manet",
-    "homepage": "https://github.com/vbauer/manet",
-    "bugs": "https://github.com/vbauer/manet/issues",
-
-    "main": "./src/runner.js",
-
-    "bin": {
-        "manet": "./bin/manet"
-    },
-
-    "author": {
-        "name": "Vladislav Bauer",
-        "email": "bauer.vlad@gmail.com",
-        "url": "https://github.com/vbauer"
-    },
-
-    "keywords": [
-        "screenshot",
-        "thumbnail",
-        "slimerjs",
-        "slimer",
-        "phantomjs",
-        "phantom",
-        "picture",
-        "image",
-        "website",
-        "screen",
-        "site",
-        "page",
-        "scr",
-        "service",
-        "server"
-    ],
-
-    "engines": {
-        "node": ">=0.10.0",
-        "npm": ">=1.4.0"
-    },
-
-    "scripts": {
-        "lint": "jshint src test example public/js/app.js",
-        "test": "mocha"
-    },
-
-    "dependencies": {
-        "express": "^4.13.3",
-        "request": "^2.61.0",
-        "body-parser": "^1.13.3",
-        "helmet": "^0.10.0",
-        "fs-extra": "^0.23.1",
-        "nconf": "^0.7.2",
-        "cloud-env": "^0.1.1",
-        "joi": "^6.6.1",
-        "qs": "^4.0.0",
-        "lodash": "^3.10.1",
-        "winston": "^1.0.1",
-        "squirrel": "^1.0.0"
-    },
-
-    "pluginDependencies": {
-        "imagemin": "^3.2.0",
-        "imagemin-gifsicle": "^4.2.0",
-        "imagemin-jpegtran": "^4.3.0",
-        "imagemin-optipng": "^4.3.0",
-        "imagemin-svgo": "^4.1.2"
-    },
-
-    "devDependencies": {
-        "jshint": "^2.8.0",
-        "mocha": "^2.2.5",
-        "w3cjs": "^0.3.0"
-    }
+  "name": "manet",
+  "version": "0.3.9",
+  "description": "Website screenshot service powered by Node.js, SlimerJS and PhantomJS",
+  "license": "MIT",
+  "repository": "vbauer/manet",
+  "homepage": "https://github.com/vbauer/manet",
+  "bugs": "https://github.com/vbauer/manet/issues",
+  "main": "./src/runner.js",
+  "bin": {
+    "manet": "./bin/manet"
+  },
+  "author": {
+    "name": "Vladislav Bauer",
+    "email": "bauer.vlad@gmail.com",
+    "url": "https://github.com/vbauer"
+  },
+  "keywords": [
+    "screenshot",
+    "thumbnail",
+    "slimerjs",
+    "slimer",
+    "phantomjs",
+    "phantom",
+    "picture",
+    "image",
+    "website",
+    "screen",
+    "site",
+    "page",
+    "scr",
+    "service",
+    "server"
+  ],
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=1.4.0"
+  },
+  "scripts": {
+    "lint": "jshint src test example public/js/app.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "body-parser": "^1.13.3",
+    "cloud-env": "^0.1.1",
+    "express": "^4.13.3",
+    "fs-extra": "^0.23.1",
+    "helmet": "^0.10.0",
+    "joi": "^6.6.1",
+    "lodash": "^3.10.1",
+    "nconf": "^0.7.2",
+    "qs": "^4.0.0",
+    "request": "^2.61.0",
+    "rimraf": "^2.4.3",
+    "squirrel": "^1.0.0",
+    "touch": "^1.0.0",
+    "winston": "^1.0.1"
+  },
+  "pluginDependencies": {
+    "imagemin": "^3.2.0",
+    "imagemin-gifsicle": "^4.2.0",
+    "imagemin-jpegtran": "^4.3.0",
+    "imagemin-optipng": "^4.3.0",
+    "imagemin-svgo": "^4.1.2"
+  },
+  "devDependencies": {
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "w3cjs": "^0.3.0"
+  }
 }

@@ -135,7 +135,7 @@ function main(onStart) {
 
     initLogging(conf);
     initExitHandling();
-    initFsStorage(conf);
+    //initFsStorage(conf); // dont run watch dog
 
     logger.debug('Default configuration file: %s', confPath);
     logger.debug('Configuration parameters: %s', JSON.stringify(conf));

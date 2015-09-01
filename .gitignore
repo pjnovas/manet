@@ -1,4 +1,8 @@
 
+# Configs
+config/*.json
+!config/defafult.json.sample
+
 # Runtime data
 pids
 *.pid

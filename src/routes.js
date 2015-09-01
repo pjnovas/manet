@@ -33,7 +33,8 @@ function createSchema() {
         images: joi.boolean(),
         user: joi.string().trim(),
         password: joi.string().trim(),
-        callback: joi.string().trim()
+        callback: joi.string().trim(),
+        updated: joi.string().trim()
     });
 }
 
@@ -74,6 +75,14 @@ function readOptions(data, schema) {
     options.url = parseUrl(options.url);
     options.headers = parseHeaders(options.headers);
     options.clipRect = parseClipRect(options.clipRect);
+
+    var rg = new RegExp(/\/print\/(\d+)\?section=(.*)/);
+    var result = rg.exec(options.url);
+
+    if (result.length > 2){
+      options.tid = result[1];
+      options.section = result[2];
+    }
 
     return _.pick(options, _.identity);
 }
