@@ -16,7 +16,9 @@ function merge(req, res, next) {
 
 function usage(req, res, next) {
     if (!req.data.url) {
-        return res.sendFile(utils.filePath('../public/usage.html'));
+      return res.status(400).send({ "error": "url parameter expected" });
+      // remove usage page
+      //return res.sendFile(utils.filePath('../public/usage.html'));
     }
     return next();
 }

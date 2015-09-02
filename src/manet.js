@@ -110,7 +110,9 @@ function createWebApplication(conf) {
     app.use(express.static(utils.filePath('../public')));
 
     app.get('/', addUsage(conf, [noCache, filters.merge]), index);
-    app.post('/', addUsage(conf, [urlencoded, json, noCache, filters.merge]), index);
+
+    // remove post verb
+    // app.post('/', addUsage(conf, [urlencoded, json, noCache, filters.merge]), index);
 
     return app;
 }

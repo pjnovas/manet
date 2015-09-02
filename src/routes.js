@@ -79,7 +79,7 @@ function readOptions(data, schema) {
     var rg = new RegExp(/\/print\/(\d+)\?section=(.*)/);
     var result = rg.exec(options.url);
 
-    if (result.length > 2){
+    if (result && result.length > 2){
       options.tid = result[1];
       options.section = result[2];
     }

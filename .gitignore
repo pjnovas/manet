@@ -1,7 +1,6 @@
 
 # Configs
-config/*.json
-!config/defafult.json.sample
+src/config/default.json
 
 # Runtime data
 pids
