@@ -34,7 +34,7 @@ function createSchema() {
         user: joi.string().trim(),
         password: joi.string().trim(),
         callback: joi.string().trim(),
-        updated: joi.string().trim()
+        updated: joi.string().trim().required()
     });
 }
 
@@ -147,6 +147,30 @@ function sendImageToUrl(options) {
     };
 }
 
+function validSection(section, res){
+  if (!section){
+    res.status(400).send('expected a section parameter');
+    return false;
+  }
+
+  var valid = [
+    "bracket",
+    "standings",
+    "upper",
+    "lower",
+    "final",
+    "groups",
+    "matches",
+    "participants"
+  ];
+
+  if (valid.indexOf(section) === -1){
+    res.status(400).send('invalid section');
+    return false;
+  }
+
+  return true;
+}
 
 /* Controller */
 
@@ -160,6 +184,15 @@ function index(config) {
         } else {
             var options = readOptions(data.value, schema),
                 siteUrl = options.url;
+
+            if (!options.tid){
+              // disallow all urls but customs
+              return res.status(400).send('unexpected url');
+            }
+
+            if (!validSection(options.section, res)){
+              return;
+            }
 
             if (!isUrlAllowed(config, siteUrl)) {
                 res.json(error('URL is not allowed'));
